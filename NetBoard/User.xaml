@@ -1,0 +1,30 @@
+﻿<Window x:Class="NetBoard.User"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NetBoard"
+        mc:Ignorable="d"
+        Title="User" Height="300" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="登录" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+        <WrapPanel Grid.Row="1" HorizontalAlignment="Center">
+            <Label Content="账号" Margin="0,0,10,10"/>
+            <TextBox Name="account" MinWidth="300" Margin="0,0,0,10" Text="ningmo@qq.com"/>
+            <Label Content="密码" Margin="0,0,10,0"/>
+            <TextBox Name="password" MinWidth="300" Text="ningmo"/>
+        </WrapPanel>
+        <StackPanel Grid.Row="2">
+            <Button x:Name="loginBtn" Content="登录" Click="loginClickAsync"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <TextBlock x:Name="loginInfo" Text="" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16"/>
+        </StackPanel>
+    </Grid>
+</Window>

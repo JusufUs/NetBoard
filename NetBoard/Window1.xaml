@@ -1,0 +1,60 @@
+﻿<Window x:Class="NetBoard.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NetBoard"
+        mc:Ignorable="d"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        Title="Window1" Height="800" Width="450">
+
+    <Window.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Image Source="/images/purplemap.png" Grid.RowSpan="2"  RenderOptions.BitmapScalingMode="HighQuality" Stretch="Uniform" HorizontalAlignment="Center" Cursor="None" IsEnabled="False"/>
+        <StackPanel Grid.Row="0">
+            <TextBlock x:Name="weclome" Text="欢迎语" FontSize="22" Margin="5,30,5,5"/>
+            <!--<TextBlock Text="IP:127.0.0.1"  Foreground="#4F70DB" FontWeight="Bold" FontSize="16" FontFamily="MS Reference Sans Serif"/>-->
+        </StackPanel>
+        <Viewbox Grid.Row="1" Stretch="Uniform">
+            <local:ConnectBtn Height="298" Loaded="ConnectBtn_Loaded"></local:ConnectBtn>
+        </Viewbox>
+        <StackPanel Grid.Row="2">
+            <TextBlock x:Name="unusedDays" Text="剩余天数:" Foreground="#7990D0" FontSize="28" Margin="5,30,5,5"/>
+            <TextBlock Text="Session"  Foreground="Gray" FontSize="16" FontFamily="MS Reference Sans Serif"/>
+            <WrapPanel Margin="0,20,0,0" HorizontalAlignment="Center">
+                <Border Margin="10,0,0,0"  BorderThickness="1" BorderBrush="Gray" CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel  HorizontalAlignment="Center">
+                        <Label Content="剩余流量"  FontSize="16" HorizontalAlignment="Center" Margin="0,10,0,0" BorderBrush="{x:Null}"/>
+                        <Label Name="unusedTr" Content="80.12G"  FontSize="30" Margin="0,10,0,5" HorizontalAlignment="Center" BorderBrush="{x:Null}"  Height="60" Width="130"/>
+                    </StackPanel>
+                </Border>
+                <Border Margin="10,0,0,0"  BorderThickness="1" BorderBrush="Gray" CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <StackPanel  HorizontalAlignment="Center">
+                        <Label Content="Mode"  FontSize="16" HorizontalAlignment="Center" Margin="0,10,0,0" BorderBrush="{x:Null}"/>
+                        <Label Content="规则"  FontSize="30" Margin="0,10,0,5" HorizontalAlignment="Center" BorderBrush="{x:Null}"  Height="60" Width="130"/>
+                    </StackPanel>
+                </Border>
+
+            </WrapPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="3">
+            <hc:ComboBox x:Name="proxiesGroup" Margin="30,10" MinHeight="35" DropDownClosed="updateProxies">
+            </hc:ComboBox>
+            <hc:ComboBox x:Name="proxies" Margin="30,10" MinHeight="35" DropDownClosed="updateClashAsync">
+            </hc:ComboBox>
+        </StackPanel>
+    </Grid>
+</Window>
