@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:NetBoard"
         mc:Ignorable="d"
         xmlns:hc="https://handyorg.github.io/handycontrol"
-        Title="Window1" Height="800" Width="450">
+        Title="主界面" Height="800" Width="450">
 
     <Window.Resources>
         <Style TargetType="TextBlock">
@@ -44,16 +44,16 @@
                 <Border Margin="10,0,0,0"  BorderThickness="1" BorderBrush="Gray" CornerRadius="20" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <StackPanel  HorizontalAlignment="Center">
                         <Label Content="Mode"  FontSize="16" HorizontalAlignment="Center" Margin="0,10,0,0" BorderBrush="{x:Null}"/>
-                        <Label Content="规则"  FontSize="30" Margin="0,10,0,5" HorizontalAlignment="Center" BorderBrush="{x:Null}"  Height="60" Width="130"/>
+                        <Label x:Name="Mode" Content="规则"  FontSize="30" Margin="0,10,0,5" HorizontalAlignment="Center" BorderBrush="{x:Null}"  Height="60" Width="130" MouseDown="changeMode"/>
                     </StackPanel>
                 </Border>
 
             </WrapPanel>
         </StackPanel>
         <StackPanel Grid.Row="3">
-            <hc:ComboBox x:Name="proxiesGroup" Margin="30,10" MinHeight="35" DropDownClosed="updateProxies">
+            <hc:ComboBox x:Name="proxiesGroup" Margin="30,10" MinHeight="35" DropDownClosed="updateProxies" IsEnabled="False">
             </hc:ComboBox>
-            <hc:ComboBox x:Name="proxies" Margin="30,10" MinHeight="35" DropDownClosed="updateClashAsync">
+            <hc:ComboBox x:Name="proxies" Margin="30,10" MinHeight="35" DropDownClosed="updateClashAsync" IsEnabled="False">
             </hc:ComboBox>
         </StackPanel>
     </Grid>

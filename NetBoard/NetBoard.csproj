@@ -83,6 +83,7 @@
     <Compile Include="ConnectBtn.xaml.cs">
       <DependentUpon>ConnectBtn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GlobalConfig.cs" />
     <Compile Include="UI.cs" />
     <Compile Include="User.xaml.cs">
       <DependentUpon>User.xaml</DependentUpon>

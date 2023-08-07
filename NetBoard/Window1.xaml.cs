@@ -95,11 +95,46 @@ namespace NetBoard
             }
             catch (Exception)
             {
-                Console.WriteLine("dd");
+                
             }
 
 
         }
 
+        private async void changeMode(object sender, MouseButtonEventArgs e)
+        {
+            string rule = "";
+            switch (Mode.Content)
+            {
+                case "规则":
+                    Mode.Content = "直连";
+                    rule = "Direct";
+                    break;
+                case "直连":
+                    Mode.Content = "全局";
+                    rule = "Global";
+                    break;
+                case "全局":
+                    Mode.Content = "规则";
+                    rule = "Rule";
+                    break;   
+            }
+            var client = new HttpClient();
+            var request = new HttpRequestMessage(new HttpMethod("PATCH"), "http://127.0.0.1:9090/configs");
+            var content = new StringContent("{\"mode\":\""+rule+"\"}", null, "application/json");
+            request.Content = content;
+            
+            try
+            {
+                var response = await client.SendAsync(request);
+                response.EnsureSuccessStatusCode();
+                Console.WriteLine(await response.Content.ReadAsStringAsync());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("{\"mode\":\"+rule+\"}");
+            }
+
+        }
     }
 }

@@ -13,8 +13,9 @@ namespace metron
     {
         public async Task<string> getSubLink()
         {
+            string api = GlobalConfig.gateway;
             var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Get, "https://user1.xn--yfrz5r03x5gq.net/api/sublink?access_token=" + UserInfo.token);
+            var request = new HttpRequestMessage(HttpMethod.Get, api+"api/sublink?access_token=" + UserInfo.token);
             var response = await client.SendAsync(request);
             response.EnsureSuccessStatusCode();
             var result = await response.Content.ReadAsStringAsync();

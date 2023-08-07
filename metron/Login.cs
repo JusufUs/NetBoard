@@ -13,8 +13,9 @@ namespace metron
     {
         public async Task<Boolean> LoginPanel(string account,string password, TextBlock loginInfo)
         {
+            string api = GlobalConfig.gateway;
             var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Post, "https://user1.xn--yfrz5r03x5gq.net/api/token");
+            var request = new HttpRequestMessage(HttpMethod.Post, api+"api/token");
             var content = new MultipartFormDataContent();
             content.Add(new StringContent(account), "email");
             content.Add(new StringContent(password), "passwd");

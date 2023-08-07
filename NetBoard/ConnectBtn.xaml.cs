@@ -72,11 +72,11 @@ namespace NetBoard
                 {
                     var ci = new ComboBoxItem();
                     ci.Content = prg;
-                    Console.WriteLine("sss");
                     Console.WriteLine(prg);
                     UI.prGroup.Items.Add(ci);
                 });
-                
+                UI.prGroup.IsEnabled = true;
+                UI.prs.IsEnabled = true;
             }
             connectment = !connectment;
         }

@@ -33,8 +33,8 @@ namespace NetBoard
                 loginInfo.Text = "正在更新订阅...";
                 var getuser = new getUser();
                 await getuser.api();
-                //var sublink = new SubLink();
-                //await sublink.download();
+                var sublink = new SubLink();
+                await sublink.download();
                 var controllPanel = new Window1();
                 controllPanel.Show();
                 this.Close();
