@@ -11,6 +11,17 @@
 
 <img src="README.assets/image-20230805172106238.png" alt="image-20230805172106238" style="zoom:50%;" />
 
+## 编译
+
+使用Visual Studio 2019
+
+![image-20230807103249273](README.assets/image-20230807103249273.png)
+
+项目metron/GlobalConfig.cs内填写sspanel地址
+
+然后编译即可
+
+最后在bin/Clash下放入clash内核的可执行文件即可
 
 ## 获得帮助
 
