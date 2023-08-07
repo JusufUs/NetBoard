@@ -26,3 +26,5 @@
 ## 获得帮助
 
 https://t.me/TalkToJshi
+
+反馈bug建议直接提交issure，不提供无偿安装搭建服务
